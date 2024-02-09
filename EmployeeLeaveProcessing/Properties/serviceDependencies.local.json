@@ -1,11 +1,5 @@
 {
   "dependencies": {
-    "identityapp1": {
-      "connectionInfo": "App registration: AzureSwaggerApi, Tenant: INFINION (infinion.co - Microsoft Entra ID)",
-      "secretStore": null,
-      "resourceId": null,
-      "type": "identityapp.default"
-    },
     "apis1": {
       "ignored": "True",
       "type": "apis"

@@ -1,16 +1,26 @@
-using Azure.Communication.Email;
-using EmployeeLeaveProcessing.Data;
+using EmployeeLeaveProcessing.Model;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Identity.Web;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using System.Text;
+using Azure;
+using Azure.Communication.Email;
+using System.Text.Json;
 using System.Text.Json.Serialization;
+using Microsoft.AspNetCore.Builder;
+using EmployeeLeaveProcessing.Data;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
  .AddMicrosoftIdentityWebApi(builder.Configuration.GetSection("AzureAd"))
         .EnableTokenAcquisitionToCallDownstreamApi()
@@ -20,7 +30,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 builder.Services.Configure<JwtBearerOptions>(JwtBearerDefaults.AuthenticationScheme, options =>
 {
     options.Authority = "https://login.microsoftonline.com/215b7ce2-5263-4593-a622-da030405d151/v2.0";
-    options.Audience = "6c87efe4-6da2-43e6-8f78-b151a0764d6b";
+    options.Audience = "ed86faf7-702a-4871-87ba-db71528c2202";
     options.RequireHttpsMetadata = true;
 
     options.TokenValidationParameters = new TokenValidationParameters
@@ -35,9 +45,41 @@ builder.Services.AddAuthorization(options =>
 });
 builder.Services.AddSingleton<EmailClient>(_ => new EmailClient(builder.Configuration.GetConnectionString("CommunicationServices")));
 
+//string connectionString = Environment.GetEnvironmentVariable("endpoint=!--https://employee.unitedstates.communication.azure.com/;accesskey=wHphdlhYST5AWQbTYkWUeeCiN+FoNuZtLmNAH23+MVKcNH5tSg8CUV3B5JmiQGL90RPlT0uCV6CrRb9+jPWFDw==");
+//EmailClient emailClient = new EmailClient(connectionString);
+/*builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddMicrosoftIdentityWebApi(builder.Configuration.GetSection("AzureAd"));
 
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+})
+.AddJwtBearer(options =>
+{
+    options.Authority = "!--https://login.microsoftonline.com/{215b7ce2-5263-4593-a622-da030405d151}";
+    options.Audience = "{7a9158f7-ad8c-472d-886a-1e43e75ff8f9}";
+
+    // Other configurations...
+
+    options.TokenValidationParameters = new TokenValidationParameters
+    {
+        NameClaimType = "name",
+        RoleClaimType = "roles",
+    };
+});*/
 builder.Services.AddControllers();
-//Add Database Context
+
+/*builder.Services.AddAuthentication(AzureADDefaults.AuthenticationScheme)
+        .AddAzureAD(options => builder.Configuration.Bind("AzureAd", options));
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowSpecificOrigin",
+        builder => builder.WithOrigins("!--http://yourfrontenddomain.com")
+                          .AllowAnyMethod()
+                          .AllowAnyHeader());
+});*/
+
 builder.Services.AddDbContext<EmployeeDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("DevConnection"));
@@ -48,7 +90,8 @@ builder.Services.AddControllers()
         options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve;
     });
 
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+
+// Learn more about configuring Swagger/OpenAPI at !--https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(
  c =>
@@ -84,6 +127,10 @@ builder.Services.AddSwaggerGen(
         }
     });
  });
+/*builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("UserPolicy", policy => policy.RequireClaim("email"));
+});*/
 
 var app = builder.Build();
 
@@ -96,12 +143,12 @@ if (app.Environment.IsDevelopment())
         c.OAuthClientId(builder.Configuration["SwaggerAzureAD: ClientId"]);
         c.OAuthUsePkce();
         c.OAuthScopeSeparator(" ");
-        c.SwaggerEndpoint("/swagger/v1/swagger.json", "Dispatch API V1");
-        c.RoutePrefix = string.Empty;
+        //c.SwaggerEndpoint("/swagger/v1/swagger.json", "Dispatch API V1");
+        //c.RoutePrefix = string.Empty;
 
     });
 }
-
+//app.UseCors("AllowSpecificOrigin");
 app.UseHttpsRedirection();
 
 app.UseAuthentication();

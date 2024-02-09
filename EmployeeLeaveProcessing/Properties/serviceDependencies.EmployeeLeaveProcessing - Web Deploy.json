@@ -1,21 +1,12 @@
 {
   "dependencies": {
     "mssql1": {
-      "serviceConnectorResourceId": "/subscriptions/[parameters('subscriptionId')]/resourcegroups/[parameters('resourceGroupName')]/providers/Microsoft.Web/sites/EmployeeLeaveProcessing/providers/Microsoft.ServiceLinker/linkers/ConnectionStringsDevConnection_6E7656EDC6",
+      "serviceConnectorResourceId": "/subscriptions/[parameters('subscriptionId')]/resourcegroups/[parameters('resourceGroupName')]/providers/Microsoft.Web/sites/EmployeeLeaveProcessing/providers/Microsoft.ServiceLinker/linkers/ConnectionStringDevConnection_C37CEDA5EC",
       "secretStore": "AzureAppSettings",
-      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourcegroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/employeeleaveprocessing-db/databases/EmployeeLeaveProcessing_database",
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/employeeleaveprocessing-database/databases/EmployeeLeaveProcessing_database",
       "type": "mssql.azure",
-      "connectionId": "ConnectionStrings:DevConnection",
+      "connectionId": "ConnectionString:DevConnection",
       "dynamicId": null
-    },
-    "identityapp1": {
-      "connectionInfo": "App registration: SwaggerClientApi, Tenant: INFINION (infinion.co - Microsoft Entra ID)",
-      "type": "identityapp.default"
-    },
-    "apis2": {
-      "apiEndpoint": "https://employeeleaveprocessingapi.azure-api.net/",
-      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.ApiManagement/service/EmployeeLeaveProcessingapi/apis/EmployeeLeaveProcessing",
-      "type": "apis.azure"
     }
   }
 }

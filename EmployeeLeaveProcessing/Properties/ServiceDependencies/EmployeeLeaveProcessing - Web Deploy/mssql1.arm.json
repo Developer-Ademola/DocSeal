@@ -51,7 +51,7 @@
             {
               "kind": "v12.0",
               "location": "[parameters('resourceLocation')]",
-              "name": "employeeleaveprocessing-db",
+              "name": "employeeleaveprocessing-database",
               "type": "Microsoft.Sql/servers",
               "apiVersion": "2017-10-01-preview"
             },
@@ -63,11 +63,11 @@
               },
               "kind": "v12.0,user",
               "location": "[parameters('resourceLocation')]",
-              "name": "employeeleaveprocessing-db/EmployeeLeaveProcessing_database",
+              "name": "employeeleaveprocessing-database/EmployeeLeaveProcessing_database",
               "type": "Microsoft.Sql/servers/databases",
               "apiVersion": "2017-10-01-preview",
               "dependsOn": [
-                "employeeleaveprocessing-db"
+                "employeeleaveprocessing-database"
               ]
             }
           ]

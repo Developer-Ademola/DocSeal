@@ -5,14 +5,8 @@
     },
     "mssql1": {
       "type": "mssql",
-      "connectionId": "ConnectionStrings:DevConnection",
+      "connectionId": "ConnectionString:DevConnection",
       "dynamicId": null
-    },
-    "identityapp1": {
-      "type": "identityapp"
-    },
-    "apis2": {
-      "type": "apis"
     }
   }
 }

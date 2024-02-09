@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "mssql1": {
+      "serviceConnectorResourceId": "/subscriptions/[parameters('subscriptionId')]/resourcegroups/[parameters('resourceGroupName')]/providers/Microsoft.Web/sites/EmployeeLeaveProcessing/providers/Microsoft.ServiceLinker/linkers/ConnectionStringsDevConnection_6E7656EDC6",
+      "secretStore": "AzureAppSettings",
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourcegroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/employeeleaveprocessing-db/databases/EmployeeLeaveProcessing_database",
+      "type": "mssql.azure",
+      "connectionId": "ConnectionStrings:DevConnection",
+      "dynamicId": null
+    }
+  }
+}

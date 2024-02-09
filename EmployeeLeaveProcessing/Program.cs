@@ -143,8 +143,8 @@ if (app.Environment.IsDevelopment())
         c.OAuthClientId(builder.Configuration["SwaggerAzureAD: ClientId"]);
         c.OAuthUsePkce();
         c.OAuthScopeSeparator(" ");
-        //c.SwaggerEndpoint("/swagger/v1/swagger.json", "Dispatch API V1");
-        //c.RoutePrefix = string.Empty;
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "Dispatch API V1");
+        c.RoutePrefix = string.Empty;
 
     });
 }

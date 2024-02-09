@@ -7,6 +7,10 @@
       "type": "mssql.azure",
       "connectionId": "ConnectionString:DevConnection",
       "dynamicId": null
+    },
+    "identityapp1": {
+      "connectionInfo": "App registration: EmployeeLeaveProcessing, Tenant: INFINION (infinion.co - Microsoft Entra ID)",
+      "type": "identityapp.default"
     }
   }
 }

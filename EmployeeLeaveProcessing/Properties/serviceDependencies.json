@@ -7,6 +7,9 @@
       "type": "mssql",
       "connectionId": "ConnectionString:DevConnection",
       "dynamicId": null
+    },
+    "identityapp1": {
+      "type": "identityapp"
     }
   }
 }

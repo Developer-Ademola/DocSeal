@@ -20,7 +20,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 builder.Services.Configure<JwtBearerOptions>(JwtBearerDefaults.AuthenticationScheme, options =>
 {
     options.Authority = "https://login.microsoftonline.com/215b7ce2-5263-4593-a622-da030405d151/v2.0";
-    options.Audience = "ed86faf7-702a-4871-87ba-db71528c2202";
+    options.Audience = "6c87efe4-6da2-43e6-8f78-b151a0764d6b";
     options.RequireHttpsMetadata = true;
 
     options.TokenValidationParameters = new TokenValidationParameters

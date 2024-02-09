@@ -1,5 +1,17 @@
 {
   "dependencies": {
+    "identityapp1": {
+      "connectionInfo": "App registration: SwaggerApi1, Tenant: INFINION (infinion.co - Microsoft Entra ID)",
+      "secretStore": "LocalSecretsFile",
+      "type": "identityapp.default",
+      "connectionId": "AzureAD:ClientSecret"
+    },
+    "mssql2": {
+      "ignored": "true",
+      "type": "mssql",
+      "connectionId": "ConnectionStrings:DevConnection",
+      "dynamicId": null
+    },
     "apis1": {
       "ignored": "True",
       "type": "apis"

@@ -14,13 +14,13 @@ namespace EmployeeLeaveProcessing.Model
         public async Task<EmailSendOperation> SendLeaveApprovalEmail(string email, string name, int leavebalance)
         {
             // This code demonstrates how to send email using Azure Communication Services.
-            string connectionString = "endpoint=https://infinion-comm-service.africa.communication.azure.com/;accesskey=/rTcnY6XnrmgxrzHi7f+jnFiAgPpOT9zdsB3KHj98ZjMHn+Y9O0tre/8Jp00Xg33YJh27ufcgVwqDlpAEiXIhg==";
+            string connectionString = "endpoint=https://communicationemployee.unitedstates.communication.azure.com/;accesskey=0IFImUNOx/9C81WbousurUFA+7nj1o7s6r9k3/NOQcBWEXYTIXQTBhZ3TuAKlCJMiuI7QicGVUx5Af95Hhl5sw==";
             var emailClient = new EmailClient(connectionString);
 
-            var sender = "donotreply@salenco.co";
+            var sender = "donotreply@69973990-cc6f-41ec-a72a-d3ecd53c4816.azurecomm.net";
             var recipient = email;
             var subject = "Leave Approved";
-            var htmlContent = $"<html><h1>Dear {name} \n Your leave requested has been approved \n Your balance for this year is {leavebalance} \n Thanks!</h1></html>";
+            var htmlContent = $"<html><h1>Dear {name} \n Your leave requested has been approved \n Your balance for this year is {leavebalance}day's \n Thanks!</h1></html>";
 
             try
             {
@@ -46,13 +46,13 @@ namespace EmployeeLeaveProcessing.Model
         public async Task<EmailSendOperation> SendLeaveRejectedEmail(string email, string name, int leavebalance)
         {
             // This code demonstrates how to send email using Azure Communication Services.
-            string connectionString = "endpoint=https://infinion-comm-service.africa.communication.azure.com/;accesskey=/rTcnY6XnrmgxrzHi7f+jnFiAgPpOT9zdsB3KHj98ZjMHn+Y9O0tre/8Jp00Xg33YJh27ufcgVwqDlpAEiXIhg==";
+            string connectionString = "endpoint=https://communicationemployee.unitedstates.communication.azure.com/;accesskey=0IFImUNOx/9C81WbousurUFA+7nj1o7s6r9k3/NOQcBWEXYTIXQTBhZ3TuAKlCJMiuI7QicGVUx5Af95Hhl5sw==";
             var emailClient = new EmailClient(connectionString);
 
-            var sender = "donotreply@salenco.co";
+            var sender = "donotreply@69973990-cc6f-41ec-a72a-d3ecd53c4816.azurecomm.net";
             var recipient = email;
             var subject = "Leave Rejected";
-            var htmlContent = $"<html><h1>Dear {name} \n Your leave has been rejected \n due to Insufficient leave remain for the year \n Your balance for this year is {leavebalance} \n Please wait till next year before you can apply \n for another leave!</h1></html>";
+            var htmlContent = $"<html><h1>Dear {name} \n Your leave has been rejected \n due to Insufficient leave remain for the year \n Your balance for this year is {leavebalance}day's \n Please wait till next year before you can apply \n for another leave!</h1></html>";
 
             //List<string> emailList = new List<string>
             //{
@@ -135,10 +135,10 @@ namespace EmployeeLeaveProcessing.Model
         public async Task<EmailSendOperation> SendLeavePendingEmail(string email, string name)
         {
             // This code demonstrates how to send email using Azure Communication Services.
-            string connectionString = "endpoint=https://infinion-comm-service.africa.communication.azure.com/;accesskey=/rTcnY6XnrmgxrzHi7f+jnFiAgPpOT9zdsB3KHj98ZjMHn+Y9O0tre/8Jp00Xg33YJh27ufcgVwqDlpAEiXIhg==";
+            string connectionString = "endpoint=https://communicationemployee.unitedstates.communication.azure.com/;accesskey=0IFImUNOx/9C81WbousurUFA+7nj1o7s6r9k3/NOQcBWEXYTIXQTBhZ3TuAKlCJMiuI7QicGVUx5Af95Hhl5sw==";
             var emailClient = new EmailClient(connectionString);
 
-            var sender = "donotreply@salenco.co";
+            var sender = "donotreply@69973990-cc6f-41ec-a72a-d3ecd53c4816.azurecomm.net";
             var recipient = email;
             var subject = "Leave Rejected";
             var htmlContent = $"<html><h1>Dear {name} \n Your leave has been rejected \n due to Insufficient leave remain for the year \n Please wait till next year before you can apply \n for another leave!</h1></html>";

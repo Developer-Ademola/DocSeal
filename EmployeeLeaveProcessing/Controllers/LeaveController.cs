@@ -17,7 +17,7 @@ namespace EmployeeLeaveProcessing.Controllers
         public LeaveController(EmployeeDbContext dbContext)
         {
             _dbContext = dbContext;
-            string connectionString = "endpoint=https://infinion-comm-service.africa.communication.azure.com/;accesskey=/rTcnY6XnrmgxrzHi7f+jnFiAgPpOT9zdsB3KHj98ZjMHn+Y9O0tre/8Jp00Xg33YJh27ufcgVwqDlpAEiXIhg==";
+            string connectionString = "endpoint=https://communicationemployee.unitedstates.communication.azure.com/;accesskey=0IFImUNOx/9C81WbousurUFA+7nj1o7s6r9k3/NOQcBWEXYTIXQTBhZ3TuAKlCJMiuI7QicGVUx5Af95Hhl5sw==";
             _emailService = new EmailService(connectionString);
         }
         private static List<Employee> employees = new List<Employee>();

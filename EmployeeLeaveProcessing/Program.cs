@@ -30,7 +30,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 builder.Services.Configure<JwtBearerOptions>(JwtBearerDefaults.AuthenticationScheme, options =>
 {
     options.Authority = "https://login.microsoftonline.com/215b7ce2-5263-4593-a622-da030405d151/v2.0";
-    options.Audience = "ed86faf7-702a-4871-87ba-db71528c2202";
+    options.Audience = "e2ff7cc6-aa36-431e-86d2-648c7d94dcfb";
     options.RequireHttpsMetadata = true;
 
     options.TokenValidationParameters = new TokenValidationParameters
@@ -143,8 +143,8 @@ if (app.Environment.IsDevelopment())
         c.OAuthClientId(builder.Configuration["SwaggerAzureAD: ClientId"]);
         c.OAuthUsePkce();
         c.OAuthScopeSeparator(" ");
-        c.SwaggerEndpoint("/swagger/v1/swagger.json", "Dispatch API V1");
-        c.RoutePrefix = string.Empty;
+        //c.SwaggerEndpoint("/swagger/v1/swagger.json", "Dispatch API V1");
+        //c.RoutePrefix = string.Empty;
 
     });
 }

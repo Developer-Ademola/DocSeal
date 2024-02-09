@@ -7,6 +7,15 @@
       "type": "mssql.azure",
       "connectionId": "ConnectionStrings:DevConnection",
       "dynamicId": null
+    },
+    "identityapp1": {
+      "connectionInfo": "App registration: SwaggerClientApi, Tenant: INFINION (infinion.co - Microsoft Entra ID)",
+      "type": "identityapp.default"
+    },
+    "apis2": {
+      "apiEndpoint": "https://employeeleaveprocessingapi.azure-api.net/",
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.ApiManagement/service/EmployeeLeaveProcessingapi/apis/EmployeeLeaveProcessing",
+      "type": "apis.azure"
     }
   }
 }

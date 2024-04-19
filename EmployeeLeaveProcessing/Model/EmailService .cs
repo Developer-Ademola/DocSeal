@@ -88,7 +88,7 @@ namespace EmployeeLeaveProcessing.Model
             string connectionString = "endpoint=https://infinion-comm-service.africa.communication.azure.com/;accesskey=/rTcnY6XnrmgxrzHi7f+jnFiAgPpOT9zdsB3KHj98ZjMHn+Y9O0tre/8Jp00Xg33YJh27ufcgVwqDlpAEiXIhg==";
             var emailClient = new EmailClient(connectionString);
 
-            var sender = "donotreply@salenco.co";
+             var sender = "donotreply@salenco.co";
              var subject = "Leave Rejected";
 
             List<string> emailList = new List<string>

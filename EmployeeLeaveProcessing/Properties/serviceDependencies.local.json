@@ -6,12 +6,6 @@
       "type": "identityapp.default",
       "connectionId": "AzureAD:ClientSecret"
     },
-    "mssql2": {
-      "ignored": "true",
-      "type": "mssql",
-      "connectionId": "ConnectionStrings:DevConnection",
-      "dynamicId": null
-    },
     "apis1": {
       "ignored": "True",
       "type": "apis"
